@@ -14,9 +14,10 @@ namespace TestCookiesNet.Controllers
         }
 
         [HttpGet("/")]
-        public IEnumerable<string> Get()
+        public IRequestCookieCollection Get()
         {
-            return new[] { "value1", "value2" };
+            var cookies = Request.Cookies;
+            return cookies;
         }
     }
 }
